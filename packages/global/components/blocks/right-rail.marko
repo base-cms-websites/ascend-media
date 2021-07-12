@@ -1,6 +1,8 @@
-$ const { GAM } = out.global;
+$ const { GAM, nativeX: nxConfig } = out.global;
 
 $ const { aliases } = input;
+
+$ const nativeX = { index: 0, name: "default"}
 
 <marko-web-gam-define-display-ad
   ...GAM.getAdUnit({ name: 'rail1', aliases })
@@ -11,3 +13,19 @@ $ const { aliases } = input;
 ...GAM.getAdUnit({ name: 'rail2', aliases })
   class="mb-block"
 />
+
+<!--<marko-web-block class="card-deck-flow card-deck-flow--1-cols"></marko-web-block>-->
+<marko-web-block class="card-deck-flow__node">
+  <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
+  ...nativeX
+  config=nxConfig
+  >
+    <global-content-card-node
+      with-teaser=input.withTeaser
+      ...input.node
+      node=nxNode
+      attrs=containerAttrs
+      link-attrs=linkAttrs
+    />
+</marko-web-native-x-render>
+</marko-web-block>

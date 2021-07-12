@@ -5,7 +5,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import websiteSectionContentLoader from "@ascend-media/package-global/loaders/website-section-content";
 import queryFragment from "@ascend-media/package-global/graphql/fragments/content-list";
 
-$ const { GAM, apollo } = out.global;
+$ const { GAM, apollo, nativeX } = out.global;
 
 $ const {
   id,
@@ -69,7 +69,9 @@ $ const promise = websiteSectionContentLoader(apollo, {
       </@above-page>
       <@page>
         <global-standard-hero-block nodes=getAsArray(featured, "nodes") />
-        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" />
+        <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(0, 2) cols=3 ad-index=1 ad-name="rail1" >
+          <@native-x index=0 name="default" />
+        </global-content-card-deck-flow>
         <div class="row">
           <div class="col-lg-8">
             <global-content-card-deck-flow nodes=getAsArray(standard, "nodes").slice(2, 4) />

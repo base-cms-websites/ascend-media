@@ -59,7 +59,9 @@
   "<global-standard-hero-block>": {
     "template": "./standard-hero.marko"
   },
-  "<global-global-right-rail-block>": {
-    "template": "./right-rail.marko"
+  "<global-right-rail-block>": {
+    "template": "./right-rail.marko",
+    "@aliases": "array",
+    "@no-shadow": "boolean"
   }
 }
