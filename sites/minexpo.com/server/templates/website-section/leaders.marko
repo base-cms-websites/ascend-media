@@ -23,28 +23,30 @@ $ const { id, alias, name, pageNode } = data;
   <@page>
     <marko-web-page-wrapper>
       <@section>
-        <div class="leaders__header">
-          <div class="leaders__header-image">
-            <marko-web-img
-              src=site.get("leaders.header.imgSrc")
-              alt=site.get("leaders.title")
-            />
-          </div>
-          <div class="leaders__header-callout">
-            <div class="leaders__callout-prefix">
-              Browse these
+      <div class="row">
+        <div class="col-lg-8" style="min-height: 1000px;">
+          <div class="leaders__header">
+            <div class="leaders__header-image">
+              <marko-web-img
+                src=site.get("leaders.header.imgSrc")
+                alt=site.get("leaders.title")
+              />
             </div>
-            <div class="leaders__callout-value">
-              Featured Exhibitors
+            <div class="leaders__header-callout">
+              <div class="leaders__callout-prefix">
+                Browse these
+              </div>
+              <div class="leaders__callout-value">
+                Featured Exhibitors
+              </div>
             </div>
           </div>
-        </div>
-        <div class="leaders__footer">
-          <a href="/directory">View All Exhibitors »</a>
-      </div>
-      </@section>
-      <@section>
+          <div class="leaders__footer">
+            <a href="/directory">View All Exhibitors »</a>
+          </div>
         <common-leaders-all display-view-all=false contextual=false/>
+      </div>
+      </div>
       </@section>
     </marko-web-page-wrapper>
   </@page>
